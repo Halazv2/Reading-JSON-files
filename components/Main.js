@@ -43,7 +43,18 @@ export default function Main() {
       </p>
       <div className="pt-12 pb-24 max-w-4xl mx-auto fsac4 md:px-1 px-3">
         <div class="ktq4">
-          <img className="w-10" src="https://nine4.app/favicon.png"></img>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="w-8 h-8"
+          >
+            <path
+              fillRule="evenodd"
+              d="M12 1.5a.75.75 0 01.75.75V4.5a.75.75 0 01-1.5 0V2.25A.75.75 0 0112 1.5zM5.636 4.136a.75.75 0 011.06 0l1.592 1.591a.75.75 0 01-1.061 1.06l-1.591-1.59a.75.75 0 010-1.061zm12.728 0a.75.75 0 010 1.06l-1.591 1.592a.75.75 0 01-1.06-1.061l1.59-1.591a.75.75 0 011.061 0zm-6.816 4.496a.75.75 0 01.82.311l5.228 7.917a.75.75 0 01-.777 1.148l-2.097-.43 1.045 3.9a.75.75 0 01-1.45.388l-1.044-3.899-1.601 1.42a.75.75 0 01-1.247-.606l.569-9.47a.75.75 0 01.554-.68zM3 10.5a.75.75 0 01.75-.75H6a.75.75 0 010 1.5H3.75A.75.75 0 013 10.5zm14.25 0a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H18a.75.75 0 01-.75-.75zm-8.962 3.712a.75.75 0 010 1.061l-1.591 1.591a.75.75 0 11-1.061-1.06l1.591-1.592a.75.75 0 011.06 0z"
+              clipRule="evenodd"
+            />
+          </svg>
           <h3 class="pt-3 font-semibold text-lg text-white">EASY-TO-USE</h3>
           <p class="pt-2 value-text text-md text-gray-200 fkrr1">
             Don't even bother to update your schema to view your JSON into
@@ -52,7 +63,18 @@ export default function Main() {
           </p>
         </div>
         <div class="ktq4">
-          <img className="w-10" src="https://nine4.app/favicon.png"></img>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="w-8 h-8"
+          >
+            <path
+              fillRule="evenodd"
+              d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z"
+              clipRule="evenodd"
+            />
+          </svg>
           <h3 class="pt-3 font-semibold text-lg text-white">SEARCH</h3>
           <p class="pt-2 value-text text-md text-gray-200 fkrr1">
             Have a huge file of values, keys or arrays? Worry no more, type in
@@ -62,7 +84,18 @@ export default function Main() {
           </p>
         </div>
         <div class="ktq4">
-          <img className="w-10" src="https://nine4.app/favicon.png"></img>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="w-8 h-8"
+          >
+            <path
+              fillRule="evenodd"
+              d="M12 2.25a.75.75 0 01.75.75v11.69l3.22-3.22a.75.75 0 111.06 1.06l-4.5 4.5a.75.75 0 01-1.06 0l-4.5-4.5a.75.75 0 111.06-1.06l3.22 3.22V3a.75.75 0 01.75-.75zm-9 13.5a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z"
+              clipRule="evenodd"
+            />
+          </svg>
           <h3 class="pt-3 font-semibold text-lg text-white">DOWNLOAD</h3>
           <p class="pt-2 value-text text-md text-gray-200 fkrr1">
             Download the graph to your local machine and use it wherever you
@@ -72,10 +105,23 @@ export default function Main() {
           </p>
         </div>
         <div class="ktq4">
-          <img className="w-10" src="https://nine4.app/favicon.png"></img>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="w-8 h-8"
+          >
+            <path
+              fillRule="evenodd"
+              d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z"
+              clipRule="evenodd"
+            />
+          </svg>
           <h3 class="pt-3 font-semibold text-lg text-white">LIVE</h3>
           <p class="pt-2 value-text text-md text-gray-200 fkrr1">
-           With Microsoft's Monaco Editor which is also used by VS Code, easily edit your JSON and directly view through the graphs. Also there's a JSON validator above of it to make sure there is no type error.
+            With Microsoft's Monaco Editor which is also used by VS Code, easily
+            edit your JSON and directly view through the graphs. Also there's a
+            JSON validator above of it to make sure there is no type error.
           </p>
         </div>
       </div>
