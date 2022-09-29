@@ -8,8 +8,14 @@ export default function Footer() {
               <a
                 href="/"
                 className="text-md text-gray-200 hover:text-white transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
+              ></a>
+            </li>
+            <li>
+              <a
+                href="/"
+                className="text-md text-gray-200 hover:text-white transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
               >
-                
+                Hala Ziani{" "}
               </a>
             </li>
             <li>
@@ -17,7 +23,7 @@ export default function Footer() {
                 href="/"
                 className="text-md text-gray-200 hover:text-white transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
               >
-                Privacy Policy
+                Kamal Ghrabla
               </a>
             </li>
             <li>
@@ -25,23 +31,7 @@ export default function Footer() {
                 href="/"
                 className="text-md text-gray-200 hover:text-white transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
               >
-                Ad Choices
-              </a>
-            </li>
-            <li>
-              <a
-                href="/"
-                className="text-md text-gray-200 hover:text-white transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
-              >
-                Cookie Policy
-              </a>
-            </li>
-            <li>
-              <a
-                href="/"
-                className="text-md text-gray-200 hover:text-white transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
-              >
-                Partners
+                Mohamed Amine
               </a>
             </li>
           </ul>
