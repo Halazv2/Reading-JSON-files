@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 30, 2022 at 12:20 PM
+-- Generation Time: Sep 30, 2022 at 01:12 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -45,8 +45,17 @@ CREATE TABLE `user` (
   `lastName` varchar(255) NOT NULL,
   `campus` varchar(255) NOT NULL,
   `class` varchar(255) NOT NULL,
-  `level` varchar(255) NOT NULL
+  `level` varchar(255) NOT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `email` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `firstName`, `lastName`, `campus`, `class`, `level`, `password`, `email`) VALUES
+(1, 'hafid', 'haffiid', 'safi', 'ada', 'A2', 'hafid zin', 'hafid@gmail.com'),
 
 --
 -- Indexes for dumped tables
@@ -73,7 +82,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
