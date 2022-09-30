@@ -7,11 +7,11 @@ export default function Contact() {
   return (
     <div className="text-black bg-black">
       <NextSeo
-        title="404: nine4"
-        description="404 page for all our missing pages"
-        canonical="https://nine4-3.vercel.app/404"
+        title="Home: Json Map"
+        description="Json Map is a free online tool to visualize and explore JSON data."
+        canonical="https://jsonmap.com/"
         openGraph={{
-          url: "https://nine4-3.vercel.app/404",
+          url: "https://jsonmap.com/",
         }}
       />
       <Head>
@@ -19,7 +19,7 @@ export default function Contact() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div className="flex flex-col justify-center mx-auto mt-52 text-center max-w-2x1">
+      <div className="flex flex-col justify-center items-center mx-auto mt-52 text-center max-w-2x1 gap-14">
         <h1 className="text-3xl font-bold tracking-tight text-white md:text-5xl">
           404 – Unavailable
         </h1>
