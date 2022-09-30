@@ -26,7 +26,7 @@ export default function Header() {
                 type="button"
                 className="relative block w-full uppercase bg-red-700 py-2 px-4 border border-transparent rounded-md font-medium text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
               >
-                sign up
+                sign in / sign up
               </button>
             </Link>
           </div>
