@@ -12,17 +12,26 @@ exports.getAllusers = (req, res, next) => {
   });
 };
 
-exports.createuser = (req, res, next) => {
+exports.sign_up = (req, res, next) => {
   if (!req.body) return next(new AppError("No form data found", 404));
-  const values = [req.body.name, req.body.email, req.body.password];
+  const values = [
+    req.body.firstName,
+    req.body.lastName,
+    req.body.campus,
+    req.body.class,
+    req.body.level,
+    req.body.email,
+    req.body.password,
+  ];
   conn.query(
-    "INSERT INTO user (name, email, password) VALUES(?)",
+    "INSERT INTO user (firstName, lastName, campus, class, level, email, password) VALUES(?)",
     [values],
     function (err, data, fields) {
       if (err) return next(new AppError(err, 500));
       res.status(201).json({
-        status: "success",
-        message: "user created!",
+        status: 201,
+        message: "User created successfully",
+        data: data,
       });
     }
   );
