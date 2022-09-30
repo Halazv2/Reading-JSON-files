@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, } from "react-router-dom";
+import Link from 'next/link'
 
 export default function Header() {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -21,7 +21,7 @@ export default function Header() {
         </div>
         <div>
           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
-            <Link to="/login">
+            <Link href="/login">
               <button
                 type="button"
                 className="relative block w-full uppercase bg-red-700 py-2 px-4 border border-transparent rounded-md font-medium text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"

@@ -1,8 +1,4 @@
 import React, { useState } from "react";
-import Photo from "../public/images/login.jpg";
-// import logo from "../../assets/logo.png";
-import { Link, useHistory } from "react-router-dom";
-import axios from "axios";
 
 function Login() {
     return (
@@ -10,7 +6,7 @@ function Login() {
             <div className="flex justify-center h-screen">
                 <div className="hidden bg-cover lg:block lg:w-2/3">
                     <div className="flex items-center h-full">
-                        <img src={Photo} className="w-full h-full object-cover" alt="" />
+                        <img src="./images/login.jpg" className="w-full h-full object-cover" alt="" />
                     </div>
                 </div>
 
@@ -68,11 +64,11 @@ function Login() {
 
                             
                             <div className="text-right mt-2">
-                                <Link to="/forget-password">
+                                {/* <Link to="/forget-password"> */}
                                     <div className="text-sm font-semibold text-gray-700 hover:text-orange-700 focus:text-blue-700">
                                         mot de passe oublié ?
                                     </div>
-                                </Link>
+                                {/* </Link> */}
                             </div>
 
                             <div className="mt-6">
