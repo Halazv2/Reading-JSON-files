@@ -1,29 +1,31 @@
 import React, { useState } from "react";
+import Link from 'next/link'
+
 
 function Login() {
     return (
-        <div className="bg-white ">
+        <div className="bg-black ">
             <div className="flex justify-center h-screen">
                 <div className="hidden bg-cover lg:block lg:w-2/3">
                     <div className="flex items-center h-full">
-                        <img src="./images/login.jpg" className="w-full h-full object-cover" alt="" />
+                        <img src="./images/login.gif" className="w-full h-full object-cover" alt="" />
                     </div>
                 </div>
 
                 <div className="flex items-center w-full max-w-md px-6 mx-auto lg:w-2/6">
                     <div className="flex-1">
                         <div className="text-center">
-                            {/* <div className="flex justify-center gap-2">
-                                <Link to="/">
-                                    <img src={logo} width={100} height={100} />
+                            <div className="flex justify-center gap-2 mb-7">
+                                <Link href="/">
+                                    <img src="./images/simploline.png" width={100} height={100} />
                                 </Link>
-                            </div> */}
+                            </div>
 
-                            <h2 className="text-4xl font-bold text-center text-black">
-                                Bienvenue à
+                            <h2 className="text-4xl font-bold text-center text-white">
+                                Welcom to
                             </h2>
-                            <h2 className="text-4xl font-bold text-center text-orange-500">
-                                GST-Avicole
+                            <h2 className="text-4xl font-bold text-center text-red-700">
+                             JSON Crack 
                             </h2>
                         </div>
 
@@ -65,8 +67,8 @@ function Login() {
                             
                             <div className="text-right mt-2">
                                 {/* <Link to="/forget-password"> */}
-                                    <div className="text-sm font-semibold text-gray-700 hover:text-orange-700 focus:text-blue-700">
-                                        mot de passe oublié ?
+                                    <div className="text-start text-sm font-semibold text-white hover:text-red-700">
+                                        Dont have an account?
                                     </div>
                                 {/* </Link> */}
                             </div>
@@ -78,12 +80,12 @@ function Login() {
                                         login();
                                     }}
                                     className="w-full px-4 py-2 tracking-wide text-white
-                  transition-colors duration-200 transform bg-orange-500
-                  rounded-md hover:bg-orange-400 focus:outline-none
-                  focus:bg-orange-400 focus:ring focus:ring-orange-300
+                  transition-colors duration-200 transform bg-red-700
+                  rounded-md hover:bg-red-600 focus:outline-none
+                  focus:bg-red-500 focus:ring focus:ring-orange-300
                   focus:ring-opacity-50"
                                 >
-                                    signup
+                                    sign in
                                 </button>
                             </div>
                             <p className="mt-6 text-sm text-center text-gray-400">
@@ -92,7 +94,7 @@ function Login() {
                                     href="#"
                                     className="text-orange-500 focus:outline-none focus:underline hover:underline"
                                 ></a>
-                                .
+                                
                             </p>
                             
                         </div>
