@@ -48,7 +48,7 @@ exports.login = (req, res, next) => {
       if (err) return next(new AppError(err, 500));
       if (data.length > 0) {
         res.status(200).json({
-          status: "login success",
+          status: "success",
           data: data,
         });
       } else {
