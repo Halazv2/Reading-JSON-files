@@ -3,7 +3,7 @@ const conn = mysql.createConnection({
  host: "localhost",
  user: "root",
  password: "",
- database: "json-crack",
+ database: "json-map",
 });
 
 conn.connect();
