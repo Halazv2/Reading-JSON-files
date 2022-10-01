@@ -7,12 +7,13 @@ export default function Main() {
   const [jsoninput, setJsoninput] = useState("");
   const [error, setError] = useState("");
   const onChange = useCallback((value, viewUpdate) => {
+    console.log(viewUpdate);
     try {
       JSON.parse(value);
       setJsoninput(value);
       setError("");
     } catch (e) {
-      setError("Invalid JSON");
+      setError(e.message);
     }
   }, []);
   return (
