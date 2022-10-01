@@ -4,10 +4,17 @@ import { useCallback, useState } from "react";
 import { json } from "@codemirror/lang-json";
 
 export default function Main() {
-  const onChange = useCallback((value, viewUpdate) => {
-    setJsoninput(value);
-  }, []);
   const [jsoninput, setJsoninput] = useState("");
+  const [error, setError] = useState("");
+  const onChange = useCallback((value, viewUpdate) => {
+    try {
+      JSON.parse(value);
+      setJsoninput(value);
+      setError("");
+    } catch (e) {
+      setError("Invalid JSON");
+    }
+  }, []);
   return (
     <section className="text-gray-600 body-font">
       <div className="max-w-5xl pt-36 pb-6 mx-auto">
@@ -19,6 +26,9 @@ export default function Main() {
         <h3 className="text-3xl font-bold text-center text-white">
           please make sure your json is valid before you click on the map button
         </h3>
+        <div className="flex text-center text-red-600 first-letter:uppercase justify-center">
+          <h1>{error}</h1>
+        </div>
       </div>
       <div className="flex items-center justify-center w-1/2 mx-auto mb-20">
         <form>
