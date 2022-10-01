@@ -23,7 +23,9 @@ const Login = ({ setIsLogin }) => {
       .then((res) => res.json())
       .then((data) => {
         if (data.status === "success") {
-          router.push("/");
+          router.push("/home");
+          localStorage.setItem("user", JSON.stringify(data.data[0]));
+          
         } else {
           setError(data.message);
         }
