@@ -5,3 +5,4 @@ Json Map is a tool for mapping json to objects. It is written in Nextjs for fron
 ```bash
 $ git clone
 ```
+![json Map](https://user-images.githubusercontent.com/93977152/193413291-47b50250-4a65-449b-ac82-0bb002deec7f.png)
