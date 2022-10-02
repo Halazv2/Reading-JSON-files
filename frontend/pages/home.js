@@ -3,8 +3,22 @@ import Header from "../components/user/UserHeader";
 import Main from "../components/user/Main";
 import Footer from "../components/Footer";
 import { NextSeo } from "next-seo";
+import { useEffect, useState } from "react";
+import { getCookie } from "cookies-next";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
+  const user = getCookie("user");
+
+  useEffect(() => {
+    if (!user) {
+      router.push("/Auth");
+    }
+    else{
+      return;
+    }
+  }, []);
   return (
     <div className="text-black bg-black">
       <NextSeo
