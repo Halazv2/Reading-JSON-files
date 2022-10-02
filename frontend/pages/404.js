@@ -15,23 +15,28 @@ export default function Contact() {
         }}
       />
       <Head>
-        <title>nine4</title>
+        <title>opss</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
       <div className="flex flex-col justify-center items-center mx-auto mt-52 text-center max-w-2x1 gap-14">
-        <h1 className="text-3xl font-bold tracking-tight text-white md:text-5xl">
-          404 – Unavailable
-        </h1>
-        <br />
         <a
-          className="w-64 p-1 mx-auto font-bold text-center text-white border border-gray-500 rounded-lg sm:p-4"
+          className="w-64 p-1 mx-auto font-bold text-center text-white border border-gray-500 rounded-lg sm:p-4 "
           href="/"
         >
           Return Home
         </a>
+        <div className="flex items-center h-full mt-7">
+            <img
+              src="./images/404.gif"
+              className="w-full h-full object-cover"
+              alt=""
+            />
+          </div>
+        
+        <br />
+       
       </div>
-      <div className="mt-64"></div>
       <Footer />
     </div>
   );
