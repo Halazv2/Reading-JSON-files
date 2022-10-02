@@ -1,10 +1,27 @@
 import Head from "next/head";
 import Header from "../components/Header";
 import Main from "../components/Main";
+import UserMain from "../components/user/Main";
+import UserHeader from "../components/user/UserHeader";
 import Footer from "../components/Footer";
 import { NextSeo } from "next-seo";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { getCookie } from "cookies-next";
 
 export default function Home() {
+  const router = useRouter();
+  const user = getCookie("user");
+  const [isLogin, setIsLogin] = useState(false);
+
+  useEffect(() => {
+    if (!user) {
+      setIsLogin(false);
+    }
+    else{
+      setIsLogin(true);
+    }
+  }, []);
   return (
     <div className="text-black bg-black">
       <NextSeo
@@ -16,15 +33,22 @@ export default function Home() {
         }}
       />
       <Head>
-        <title>
-          Json Map - Visualize and explore JSON data online
-        </title>
+        <title>Json Map - Visualize and explore JSON data online</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <Header />
-      <Main />
+      {isLogin? (
+        <>
+          <UserHeader />
+          <UserMain />
+        </>
+      ) : (
+        <>
+          <Header />
+          <Main />
+        </>
+      )}
+
       <Footer />
-      {/* <h1 class="text-3xl font-bold underline">Hello world!</h1> */}
     </div>
   );
 }
