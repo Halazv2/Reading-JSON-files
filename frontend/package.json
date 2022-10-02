@@ -13,9 +13,11 @@
     "@codemirror/lang-json": "^6.0.0",
     "@heroicons/react": "^2.0.11",
     "@uiw/react-codemirror": "^4.12.3",
+    "cookies-next": "^2.1.1",
     "next": "^12.3.1",
     "next-seo": "^5.5.0",
     "react": "18.2.0",
+    "react-cookie": "^4.1.1",
     "react-dom": "18.2.0",
     "yarn": "^1.22.19"
   },
