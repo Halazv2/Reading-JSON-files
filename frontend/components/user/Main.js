@@ -3,7 +3,7 @@ import { javascript } from "@codemirror/lang-javascript";
 import { useCallback, useState } from "react";
 import { json } from "@codemirror/lang-json";
 
-export default function Main() {
+export default function UserMain() {
   const [jsoninput, setJsoninput] = useState("");
   const [error, setError] = useState("");
   const onChange = useCallback((value, viewUpdate) => {
