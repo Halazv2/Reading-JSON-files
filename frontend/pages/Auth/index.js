@@ -1,10 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Login from "../../components/auth/login";
 import Signup from "../../components/auth/signup";
+import { getCookie } from "cookies-next";
+
 export default function Auth() {
   const [isLogin, setIsLogin] = useState(true);
+
+  const router = useRouter();
+  const user = getCookie("user");
+
+  useEffect(() => {
+    if (!user) {
+      return;
+    } else {
+      router.push("/home");
+    }
+  }, []);
   return (
     <div className="bg-black ">
       <div className="flex justify-center h-screen">
