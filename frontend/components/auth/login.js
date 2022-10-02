@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
-
+import { setCookie } from "cookies-next";
 const Login = ({ setIsLogin }) => {
   const router = useRouter();
   const [email, setEmail] = useState("");
@@ -24,8 +24,9 @@ const Login = ({ setIsLogin }) => {
       .then((data) => {
         if (data.status === "success") {
           router.push("/home");
-          localStorage.setItem("user", JSON.stringify(data.data[0]));
-          
+          setCookie("user", data.data[0], {
+            maxAge: 6000,
+          });
         } else {
           setError(data.message);
         }
