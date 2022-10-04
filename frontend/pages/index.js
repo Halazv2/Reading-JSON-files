@@ -9,7 +9,18 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { getCookie } from "cookies-next";
 
+
 export default function Home() {
+  const particlesInit = (main)=> {
+    console.log(main);
+    // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+    // starting from v2 you can add only the features you need reducing the bundle size
+  };
+
+  const particlesLoaded = (container) => {
+       console.log(container);
+  };
   const router = useRouter();
   const user = getCookie("user");
   const [isLogin, setIsLogin] = useState(false);
@@ -18,12 +29,15 @@ export default function Home() {
     if (!user) {
       setIsLogin(false);
     }
-    else{
+    else {
       setIsLogin(true);
     }
   }, []);
+  
   return (
     <div className="text-black bg-black">
+    
+
       <NextSeo
         title="Home: Json Map"
         description="Json Map is a free online tool to visualize and explore JSON data."
@@ -36,7 +50,7 @@ export default function Home() {
         <title>Json Map - Visualize and explore JSON data online</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
-      {isLogin? (
+      {isLogin ? (
         <>
           <UserHeader />
           <UserMain />

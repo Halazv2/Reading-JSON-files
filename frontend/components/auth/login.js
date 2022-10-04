@@ -97,7 +97,7 @@ const Login = ({ setIsLogin }) => {
                 setIsLogin(false);
               }}
             >
-              <div className="text-end text-sm font-semibold text-white hover:text-red-700">
+              <div className="text-start text-sm font-semibold text-white hover:text-red-700">
                 Dont have an account?
               </div>
             </div>

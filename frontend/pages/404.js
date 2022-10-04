@@ -16,24 +16,25 @@ export default function Contact() {
       />
       <Head>
         <title>opss</title>
+        
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
       <div className="flex flex-col justify-center items-center mx-auto mt-52 text-center max-w-2x1 gap-14">
-        <a
+        
+        <div className="flex items-center">
+            <img
+              src="./images/404.gif"
+              className="w-full h-96 object-cover"
+              alt=""
+            />
+          </div>
+          <a
           className="w-64 p-1 mx-auto font-bold text-center text-white border border-gray-500 rounded-lg sm:p-4 "
           href="/"
         >
           Return Home
         </a>
-        <div className="flex items-center h-full mt-7">
-            <img
-              src="./images/404.gif"
-              className="w-full h-full object-cover"
-              alt=""
-            />
-          </div>
-        
         <br />
        
       </div>

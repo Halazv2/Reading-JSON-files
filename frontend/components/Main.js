@@ -1,11 +1,13 @@
 export default function Main() {
   return (
+    
     <section class="text-gray-600 body-font">
+      
       <div class="max-w-5xl pt-52 pb-24 mx-auto">
         <h1 class="text-80 text-center font-4 lh-6 ld-04 font-bold text-white mb-6">
           <span class="text-red-700">JSON</span> Map
         </h1>
-        <h2 class="text-3xl font-4 font-light lh-6 ld-04 pb-11 text-gray-700 text-center">
+        <h2 class="text-3xl font-4 font-light lh-6 ld-04 pb-11 text-gray-500 text-center">
           Seamlessly visualize your JSON data instantly into graphs. <br />
         </h2>
         <p className="text-2xl font-4 font-light lh-6 ld-04 pb-11 text-gray-500 text-center">

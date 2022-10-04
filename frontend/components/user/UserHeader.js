@@ -19,7 +19,7 @@ export default function UserHeader() {
         <div>
           <div
             className=" text-white cursor-pointer"
-            onClick={() => router.push("/")}
+            onClick={() => router.push("/profil")}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
