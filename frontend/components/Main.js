@@ -1,23 +1,24 @@
+
 export default function Main() {
   return (
-    
+
     <section class="text-gray-600 body-font">
-      
+
       <div class="max-w-5xl pt-52 pb-24 mx-auto">
-        <h1 class="text-80 text-center font-4 lh-6 ld-04 font-bold text-white mb-6">
-          <span class="text-red-700">JSON</span> Map
-        </h1>
+        <h2 class="text-80 text-center font-4 lh-6 ld-04 font-bold text-white mb-6 flex justify-center gap-2 " >
+          <span class="text-red-700">JSON</span> <a className="map" id="style-2" data-replace="Tree"><span className="">Map</span></a>
+        </h2>
         <h2 class="text-3xl font-4 font-light lh-6 ld-04 pb-11 text-gray-500 text-center">
           Seamlessly visualize your JSON data instantly into graphs. <br />
         </h2>
         <p className="text-2xl font-4 font-light lh-6 ld-04 pb-11 text-gray-500 text-center">
           Paste - Import - Fetch!
         </p>
-        <div className="ml-6 text-center">
-          <a href="/login">
+        <div className="ml-6 text-center flex justify-center">
+          <a href="/Auth">
             <button
               type="button"
-              className="relative bg-red-700 py-2 px-4 border border-transparent rounded-md font-medium text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+              className="relative bg-red-700 py-2 px-4  border-transparent rounded-md font-medium text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
             >
               <div className="flex text-lg">
                 <span className="justify-center">Get Started</span>
