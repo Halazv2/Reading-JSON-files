@@ -45,7 +45,7 @@
   .map:hover span {
     transform: translate3d(-200%, 0, 0);
   }
-  button {
+  /* button {
     align-self: center;
     background-color: #B91C1C;
     box-shadow: 10px 10px 0 #fff;
@@ -62,4 +62,4 @@
     box-shadow: none;
     color: #000;
     translate: 10px 10px;
-  }
+  } */
