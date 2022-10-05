@@ -1,13 +1,13 @@
 import CodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
-import { useCallback, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { json } from "@codemirror/lang-json";
 
 export default function UserMain() {
   const [jsoninput, setJsoninput] = useState("");
   const [error, setError] = useState("");
+
   const onChange = useCallback((value, viewUpdate) => {
-    console.log(viewUpdate);
     try {
       JSON.parse(value);
       setJsoninput(value);
@@ -16,6 +16,86 @@ export default function UserMain() {
       setError(e.message);
     }
   }, []);
+
+  const chechObjectvalue = (checkedobj) => {
+    if (checkedobj instanceof Object) {
+      if (checkedobj instanceof Array) {
+        return checkedobj.map((item, value) => {
+          return value;
+          // console.log(item[key], item[value]);
+        });
+      } else {
+        return Object.keys(checkedobj).map((key) => {
+          // console.log(key, checkedobj[key]);
+        });
+      }
+    } else {
+      return checkedobj;
+    }
+  };
+
+  const chechObjectkey = (checkedkey) => {
+    if (typeof checkedkey === "string") {
+      return checkedkey;
+    } else {
+      return null;
+    }
+  };
+
+  // end of fucntion
+  const getValues = (obj) => {
+    let values = Object.values(obj);
+    let keys = Object.keys(obj);
+
+    chechObjectvalue(obj);
+    for (let i = 0; i < keys.length; i++) {
+      // ul.innerHTML += `</br>`;
+      if (typeof obj[keys[i]] !== "object") {
+        ul.insertAdjacentHTML(
+          "beforeend",
+          `<div
+          class="flex items-center justify-between ml-4"
+        >${chechObjectkey(keys[i])} : ${chechObjectvalue(obj[keys[i]])}<div><br>`
+        );
+      }
+      if (typeof obj[keys[i]] === "object") {
+        if (obj[keys[i]].constructor.name === "Array") {
+          console.log('sfd')
+          ul.innerHTML += `<div><li>${keys[i]}</li></div>`;
+        } else {
+          ul.innerHTML += `<div><li> ${keys[i]} </li></div>`;
+        }
+        getValues(obj[keys[i]]);
+      } else {
+        values.push(keys[i], obj[keys[i]]);
+      }
+    }
+  };
+
+  const map = () => {
+    ul.innerHTML = "";
+    if (jsoninput) {
+      const data = JSON.parse(jsoninput);
+      // const keys = Object.keys(data);
+      // const values = Object.values(data);
+      // const simpleKeys = keys.filter((key) => {
+      //   return typeof data[key] !== "object";
+      // });
+      // const complexKeys = keys.filter((key) => {
+      //   return typeof data[key] === "object";
+      // });
+      // console.log("simpleKeys: ", simpleKeys);
+      // console.log("complexKeys: ", complexKeys);
+      // for (let i = 0; i < complexKeys.length; i++) {
+      //   const complexValue = values[i];
+      //   const complexValuess= Object.values(complexValue);
+      // }
+      getValues(data);
+    } else {
+      setError("Please Enter a Json");
+    }
+  };
+
   return (
     <section className="text-gray-600 body-font">
       <div className="max-w-5xl pt-36 pb-6 mx-auto">
@@ -59,13 +139,17 @@ export default function UserMain() {
               className="mt-6 text-white bg-red-700 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg"
               onClick={(e) => {
                 e.preventDefault();
-                setJsoninput("");
+                map();
               }}
             >
               Map
             </button>
           </div>
         </form>
+      </div>
+
+      <div className="flex  items-center justify-center w-1/2 mx-auto mb-20 ">
+        <ul className="text-white text-2xl decoration-white" id="ul"></ul>
       </div>
     </section>
   );
