@@ -10,13 +10,13 @@ export default function Footer() {
                 <div class="space-y-6">
                   <div className="flex justify-center">
                   <img
-                    className="object-cover object-center w-3/4 mb-10 rounded-full "
+                    className="object-cover object-center w-1/2 mb-10 rounded-full "
                     alt="Placeholder Image"
                     src="https://github.com/AmineElazzab.png"
                   ></img>
                   </div>
                   <div class="space-y-2">
-                    <div class="text-lg leading-6 font-medium space-y-1">
+                    <div class="text-base leading-6 font-medium space-y-1">
                       <h3>Mohammed Amine Elazzab</h3>
                     </div>
                     
@@ -27,13 +27,13 @@ export default function Footer() {
                 <div class="space-y-6">
                   <div className="flex justify-center">
                   <img
-                    className="object-cover object-center w-3/4 mb-10 rounded-full "
+                    className="object-cover object-center w-1/2 mb-10 rounded-full "
                     alt="Placeholder Image"
                     src="https://github.com/Halazv2.png"
                   ></img>
                   </div>
                   <div class="space-y-2">
-                    <div class="text-lg leading-6 font-medium space-y-1">
+                    <div class="text-base leading-6 font-medium space-y-1">
                       <h3>Hala Ziani</h3>
                     </div>
                  
@@ -44,13 +44,13 @@ export default function Footer() {
                 <div class="space-y-6">
                   <div className="flex justify-center">
                   <img
-                    className="object-cover object-center w-3/4 mb-10 rounded-full "
+                    className="object-cover object-center w-1/2 mb-10 rounded-full "
                     alt="Placeholder Image"
                     src="https://github.com/ghrabla.png"
                   ></img>
                   </div>
                   <div class="space-y-2">
-                    <div class="text-lg leading-6 font-medium space-y-1">
+                    <div class="text-base leading-6 font-medium space-y-1">
                       <h3>Kamal Rhrabla</h3>
                     </div>
                   
