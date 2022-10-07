@@ -6,16 +6,16 @@ import { NextSeo } from "next-seo";
 import { useEffect, useState } from "react";
 import { getCookie } from "cookies-next";
 import { useRouter } from "next/router";
+import Upload from "../components/user/Upload";
 
 export default function Home() {
   const router = useRouter();
   const user = getCookie("user");
-
+  const [upload, setUpload] = useState(true);
   useEffect(() => {
     if (!user) {
       router.push("/Auth");
-    }
-    else{
+    } else {
       return;
     }
   }, []);
@@ -34,7 +34,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <Header />
-      <Main />
+      {upload ? (
+        <Main setUpload={setUpload} />
+      ) : (
+        <Upload setUpload={setUpload} />
+      )}
       <Footer />
       {/* <h1 class="text-3xl font-bold underline text-white">Hello world!</h1> */}
     </div>
