@@ -3,9 +3,10 @@ import { javascript } from "@codemirror/lang-javascript";
 import { useCallback, useRef, useState } from "react";
 import { json } from "@codemirror/lang-json";
 
-export default function UserMain() {
+export default function UserMain({ setUpload }) {
   const [jsoninput, setJsoninput] = useState("");
   const [error, setError] = useState("");
+  const ref = useRef(null);
 
   const onChange = useCallback((value, viewUpdate) => {
     try {
@@ -43,54 +44,61 @@ export default function UserMain() {
   };
 
   // end of fucntion
+
   const getValues = (obj) => {
+    console.log(obj);
     let values = Object.values(obj);
     let keys = Object.keys(obj);
-
     chechObjectvalue(obj);
+
+    const ul = document.createElement("ul");
     for (let i = 0; i < keys.length; i++) {
-      // ul.innerHTML += `</br>`;
-      if (typeof obj[keys[i]] !== "object") {
-        ul.insertAdjacentHTML(
-          "beforeend",
-          `<div
-          class="flex items-center justify-between ml-4"
-        >${chechObjectkey(keys[i])} : ${chechObjectvalue(obj[keys[i]])}<div><br>`
-        );
-      }
-      if (typeof obj[keys[i]] === "object") {
-        if (obj[keys[i]].constructor.name === "Array") {
-          console.log('sfd')
-          ul.innerHTML += `<div><li>${keys[i]}</li></div>`;
+      const li = document.createElement("li");
+      ul.style.display = "flex";
+      ul.style.flexWrap = "wrap";
+      if (typeof values[i] === "object") {
+        if (parseInt(values[i]) === values[i]) {
+          li.innerHTML += ``;
+          li.appendChild(getValues(values[i]));
         } else {
-          ul.innerHTML += `<div><li> ${keys[i]} </li></div>`;
+          li.innerHTML += `${keys[i]}:`;
+          li.appendChild(getValues(values[i]));
         }
-        getValues(obj[keys[i]]);
-      } else {
-        values.push(keys[i], obj[keys[i]]);
       }
+      if (typeof values[i] !== "object") {
+        li.innerHTML += `${keys[i]}: ${values[i]}`;
+      }
+      ul.appendChild(li);
+      li.style.color = typeof values[i] === "object" ? "green" : "white";
+      li.style.fontFamily = "monospace";
+      li.style.fontSize = typeof keys[i] === "string" ? "1.5rem" : "1rem";
+      li.style.fontWeight =
+        typeof values[i] === "string" ? "extrabold" : "bold";
+      li.style.listStyleType = typeof values[i] === "string" ? "none" : "disc";
+      li.style.marginLeft = typeof values[i] === "string" ? "0px" : "20px";
+      li.style.marginBottom = typeof values[i] === "string" ? "0px" : "10px";
+      li.style.fontSize = typeof values[i] === "string" ? "20px" : "16px";
+      li.style.textAlign = typeof values[i] === "string" ? "left" : "center";
+
+      li.style.padding = "10px";
+      // li.style.borderRadius = typeof values[i] === "string" ? "0px" : "10px";
+      li.style.backgroundColor =
+        typeof values[i] === "string" ? "transparent" : "";
+      ul.style.border = "2px solid #e5e5e5";
     }
+
+    return ul;
   };
 
   const map = () => {
-    ul.innerHTML = "";
+    // ul.innerHTML = "";
     if (jsoninput) {
       const data = JSON.parse(jsoninput);
-      // const keys = Object.keys(data);
-      // const values = Object.values(data);
-      // const simpleKeys = keys.filter((key) => {
-      //   return typeof data[key] !== "object";
-      // });
-      // const complexKeys = keys.filter((key) => {
-      //   return typeof data[key] === "object";
-      // });
-      // console.log("simpleKeys: ", simpleKeys);
-      // console.log("complexKeys: ", complexKeys);
-      // for (let i = 0; i < complexKeys.length; i++) {
-      //   const complexValue = values[i];
-      //   const complexValuess= Object.values(complexValue);
-      // }
+      ref.current.innerHTML = "";
       getValues(data);
+      if (ref.current) {
+        ref.current.appendChild(getValues(data));
+      }
     } else {
       setError("Please Enter a Json");
     }
@@ -101,6 +109,17 @@ export default function UserMain() {
       <div className="max-w-5xl pt-36 pb-6 mx-auto">
         <h1 className="text-80 text-center font-4 lh-6 ld-04 font-bold text-white mb-6">
           <span className="text-red-700">JSON</span> Map
+        </h1>
+      </div>
+      <div
+        className="container p-5  mx-auto flex justify-center items-center cursor-pointer
+        "
+        onClick={() => {
+          setUpload(false);
+        }}
+      >
+        <h1 className="text-14 text-center font-bold text-white mb-6 ">
+          upload json file
         </h1>
       </div>
       <div className="mb-5">
@@ -147,9 +166,12 @@ export default function UserMain() {
           </div>
         </form>
       </div>
-
-      <div className="flex  items-center justify-center w-1/2 mx-auto mb-20 ">
-        <ul className="text-white text-2xl decoration-white" id="ul"></ul>
+      <div
+        className="flex items-center justify-center w-1/2 mx-auto bg-gray-900 p-10 rounded-lg"
+        id="json"
+        ref={ref}
+      >
+        {/* <ul className="text-white text-2xl decoration-white" id="ul"></ul> */}
       </div>
     </section>
   );
