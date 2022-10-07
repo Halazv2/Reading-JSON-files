@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "name": "abc",
+    "people": ["kamal", "hamza", "hala"],
+    "adress" : {"city":"safi","post":54}
+  },
+  {
+    "id": 2,
+    "name": "def",
+    "people": ["baba", "mama", "siham"]
+  }
+]
